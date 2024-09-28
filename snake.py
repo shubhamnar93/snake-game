@@ -15,6 +15,13 @@ class Snake:
             segments.append(new_segment)
         return segments
 
+    def reset_snake(self):
+        for seg in self.segments[3:]:
+            seg.goto(1000,1000)
+        del self.segments[3:]
+        self.segments[0].goto(0,0)
+
+
     def extend(self):
         new_segment = t.Turtle("square")
         new_segment.color("white")
